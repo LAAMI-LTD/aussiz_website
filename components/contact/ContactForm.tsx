@@ -20,17 +20,20 @@ const courseOptions = [
   "Other",
 ];
 
+const contactMethodOptions = ["Email", "Phone", "WhatsApp"] as const;
+
 const contactSchema = z.object({
   fullName: z.string().trim().min(2, "Please enter your full name."),
   email: z.string().trim().email("Please enter a valid email address."),
   phone: z.string().trim().optional(),
   courseOfInterest: z.string().min(1, "Please select a course of interest."),
+  preferredContactMethod: z.enum(contactMethodOptions),
   message: z.string().trim().min(10, "Please share a few more details (min. 10 characters)."),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
 
-export function ContactForm() {
+export function ContactForm({ defaultCourse }: { defaultCourse?: string } = {}) {
   const {
     register,
     handleSubmit,
@@ -42,7 +45,8 @@ export function ContactForm() {
       fullName: "",
       email: "",
       phone: "",
-      courseOfInterest: "",
+      courseOfInterest: defaultCourse ?? "",
+      preferredContactMethod: "Email",
       message: "",
     },
   });
@@ -115,7 +119,7 @@ export function ContactForm() {
         <label htmlFor="courseOfInterest" className="mb-1.5 block text-sm font-medium text-navy">
           Course of Interest <span className="text-orange">*</span>
         </label>
-        <Select id="courseOfInterest" defaultValue="" {...register("courseOfInterest")} aria-invalid={!!errors.courseOfInterest}>
+        <Select id="courseOfInterest" {...register("courseOfInterest")} aria-invalid={!!errors.courseOfInterest}>
           <option value="" disabled>
             Select a course
           </option>
@@ -129,6 +133,30 @@ export function ContactForm() {
           <p className="mt-1.5 text-xs text-red-600">{errors.courseOfInterest.message}</p>
         )}
       </div>
+
+      <fieldset>
+        <legend className="mb-1.5 block text-sm font-medium text-navy">
+          Preferred Contact Method
+        </legend>
+        <div className="flex flex-wrap gap-2">
+          {contactMethodOptions.map((method) => (
+            <label
+              key={method}
+              className="focus-within:ring-2 focus-within:ring-orange focus-within:ring-offset-2 relative cursor-pointer rounded-full"
+            >
+              <input
+                type="radio"
+                value={method}
+                {...register("preferredContactMethod")}
+                className="peer sr-only"
+              />
+              <span className="inline-flex rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-navy transition-colors peer-checked:border-orange peer-checked:bg-orange peer-checked:text-white">
+                {method}
+              </span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
 
       <div>
         <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-navy">

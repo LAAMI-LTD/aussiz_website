@@ -9,6 +9,8 @@ export interface Course {
   icon: string;
   benefits: string[];
   ctaLabel: string;
+  price?: string;
+  intakeStatus?: string;
   overview?: string;
   whoItsFor?: string[];
   learningOutcomes?: string[];
@@ -19,6 +21,23 @@ export interface Course {
   fees?: string;
   examBookingInfo?: string;
   faqs?: { question: string; answer: string }[];
+}
+
+export interface NewsArticle {
+  slug: string;
+  title: string;
+  excerpt: string;
+  body: string;
+  heroImage?: string;
+  category: string;
+  publishedAt: string; // ISO date string
+  author?: string;
+}
+
+export interface Metric {
+  value: string;
+  label: string;
+  description?: string;
 }
 
 export interface Facilitator {
@@ -36,4 +55,8 @@ export interface Testimonial {
   course: string;
   quote: string;
   isPlaceholder: boolean;
+  image?: string;
+  result?: string;
+  date?: string;
+  source?: string;
 }

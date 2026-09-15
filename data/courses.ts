@@ -19,6 +19,8 @@ export const courses: Course[] = [
       "Small-group and individual sessions",
     ],
     ctaLabel: "Learn More",
+    price: "KES 10,000 (Face-to-Face) / KES 12,000 (Online)",
+    intakeStatus: "Intake Open",
     overview:
       "Placeholder overview — replace with verified IELTS programme details.",
     whoItsFor: [
@@ -32,11 +34,11 @@ export const courses: Course[] = [
       "Structured approach to writing Task 1 and Task 2",
       "Confidence in speaking under exam conditions",
     ],
-    duration: "[Duration to be confirmed]",
+    duration: "4 Weeks",
     modules: ["Listening", "Reading", "Writing", "Speaking", "Mock Exams"],
     requirements: ["[Requirements to be confirmed]"],
-    trainingMode: "[In-person / Online — to be confirmed]",
-    fees: "[Fees available on enquiry]",
+    trainingMode: "Face to Face / Online",
+    fees: "KES 10,000 (Face-to-Face) / KES 12,000 (Online)",
     examBookingInfo:
       "Aussiz can support learners with information on booking their IELTS exam. Booking is subject to official test provider terms.",
     faqs: [
@@ -65,6 +67,8 @@ export const courses: Course[] = [
       "Personalised progress feedback",
     ],
     ctaLabel: "Learn More",
+    price: "KES 10,000",
+    intakeStatus: "Intake Open",
     overview: "Placeholder overview — replace with verified PTE programme details.",
     whoItsFor: [
       "Students and professionals needing a fast, computer-based English test",
@@ -75,11 +79,11 @@ export const courses: Course[] = [
       "Improved accuracy across speaking, writing, reading and listening tasks",
       "Test-day strategies for managing time and stress",
     ],
-    duration: "[Duration to be confirmed]",
+    duration: "4 Weeks",
     modules: ["Speaking & Writing", "Reading", "Listening", "Mock Tests"],
     requirements: ["[Requirements to be confirmed]"],
-    trainingMode: "[In-person / Online — to be confirmed]",
-    fees: "[Fees available on enquiry]",
+    trainingMode: "Computer-Based",
+    fees: "KES 10,000",
     examBookingInfo:
       "Aussiz can support learners with information on booking their PTE exam. Booking is subject to official test provider terms.",
     faqs: [
@@ -108,6 +112,8 @@ export const courses: Course[] = [
       "Certificate of completion",
     ],
     ctaLabel: "View ICT Courses",
+    price: "KES 3,500",
+    intakeStatus: "Intake Open",
     overview: "Placeholder overview — replace with verified ICT programme details.",
     whoItsFor: [
       "Students building foundational digital skills",
@@ -119,11 +125,11 @@ export const courses: Course[] = [
       "Basic digital literacy and file management",
       "Practical skills applicable to work and study",
     ],
-    duration: "[Duration to be confirmed]",
+    duration: "1 Month",
     modules: ["Computer Basics", "Office Applications", "Internet & Email", "Digital Safety"],
     requirements: ["[Requirements to be confirmed]"],
-    trainingMode: "[In-person / Online — to be confirmed]",
-    fees: "[Fees available on enquiry]",
+    trainingMode: "Beginner to Advanced",
+    fees: "KES 3,500",
     faqs: [],
   },
   {
@@ -144,6 +150,8 @@ export const courses: Course[] = [
       "Experienced language facilitators",
     ],
     ctaLabel: "Learn German",
+    price: "KES 10,000 / Month",
+    intakeStatus: "Intake Open",
     overview: "Placeholder overview — replace with verified German programme details.",
     whoItsFor: [
       "Students planning to study in German-speaking countries",
@@ -155,11 +163,11 @@ export const courses: Course[] = [
       "Foundational grammar and vocabulary",
       "Preparation pathway toward recognised proficiency levels",
     ],
-    duration: "[Duration to be confirmed]",
+    duration: "2 Months per Level (A1–B2)",
     modules: ["Beginner (A1)", "Elementary (A2)", "Intermediate (B1)"],
     requirements: ["[Requirements to be confirmed]"],
-    trainingMode: "[In-person / Online — to be confirmed]",
-    fees: "[Fees available on enquiry]",
+    trainingMode: "In-person",
+    fees: "KES 10,000 / Month",
     faqs: [],
   },
   {
@@ -215,6 +223,8 @@ export const courses: Course[] = [
       "Foundational disability support knowledge",
     ],
     ctaLabel: "Learn More",
+    price: "KES 65,000",
+    intakeStatus: "Intake Open",
     overview:
       "Placeholder overview — replace with verified Caregiving & Disability programme details.",
     whoItsFor: [
@@ -226,11 +236,11 @@ export const courses: Course[] = [
       "Understanding of dignity-focused, person-centred care",
       "Practical approaches for supporting individuals with disabilities",
     ],
-    duration: "[Duration to be confirmed]",
+    duration: "6 Months",
     modules: ["Foundations of Caregiving", "Disability Support Principles", "Safe Practice"],
     requirements: ["[Requirements to be confirmed]"],
-    trainingMode: "[In-person / Online — to be confirmed]",
-    fees: "[Fees available on enquiry]",
+    trainingMode: "In-person",
+    fees: "KES 65,000",
     faqs: [],
   },
 ];

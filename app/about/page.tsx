@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Award, ShieldCheck, GraduationCap, Users2, Accessibility, TrendingUp } from "lucide-react";
 import { facilitators } from "@/data/facilitators";
 import { FacilitatorCard } from "@/components/about/FacilitatorCard";
+import { WhyAussiz } from "@/components/home/WhyAussiz";
 import { LearningJourney } from "@/components/home/LearningJourney";
+import { Testimonials } from "@/components/home/Testimonials";
+import { Partnership } from "@/components/home/Partnership";
 import { CTASection } from "@/components/home/CTASection";
 import { Reveal } from "@/components/ui/reveal";
 import { siteConfig } from "@/data/site";
@@ -41,15 +43,12 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="relative aspect-[7/4] w-full overflow-hidden rounded-xl shadow-lg">
-              <Image
-                src="/images/hero/computer-lab-close.jpg"
-                alt="A workstation in the Aussiz computer training lab"
-                fill
-                sizes="(min-width: 1024px) 45vw, 90vw"
-                className="object-cover"
-              />
-            </div>
+            <div
+              role="img"
+              aria-label="A workstation in the Aussiz computer training lab"
+              className="aspect-[7/4] w-full rounded-xl bg-cover bg-center bg-no-repeat shadow-lg"
+              style={{ backgroundImage: "url(/images/hero/computer-lab-close.jpg)" }}
+            />
           </Reveal>
         </div>
       </section>
@@ -114,6 +113,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <WhyAussiz />
+
       <LearningJourney />
 
       <section className="bg-background py-16 md:py-20">
@@ -135,6 +136,10 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
+
+      <Partnership />
 
       <CTASection />
     </>

@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/courses", label: "Courses" },
+  { href: "/news", label: "News" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -128,9 +129,9 @@ export function Navbar() {
           transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
           className="hidden md:block"
         >
-          <Link href="/contact">
+          <Link href="/ielts-booking">
             <Button variant="primary" size="default">
-              Get Started
+              Book IELTS
             </Button>
           </Link>
         </motion.div>
@@ -180,8 +181,8 @@ export function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-              <Link href="/contact" className="mt-2" onClick={closeMobileMenu}>
-                <Button className="w-full">Get Started</Button>
+              <Link href="/ielts-booking" className="mt-2" onClick={closeMobileMenu}>
+                <Button className="w-full">Book IELTS</Button>
               </Link>
             </div>
           </motion.div>
