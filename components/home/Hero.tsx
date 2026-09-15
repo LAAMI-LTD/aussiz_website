@@ -92,16 +92,16 @@ export function Hero() {
             {...fadeUp(0.46)}
             className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <Link href="/courses">
+            <Link href="/ielts-booking">
               <Button size="lg" className="w-full sm:w-auto">
-                Explore Our Courses
+                Book IELTS
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
-            <Link href="/contact">
+            <Link href="/courses">
               <Button variant="outlineOnDark" size="lg" className="w-full sm:w-auto">
                 <MessageCircle className="h-4 w-4" />
-                Get in Touch
+                Explore Courses
               </Button>
             </Link>
           </motion.div>

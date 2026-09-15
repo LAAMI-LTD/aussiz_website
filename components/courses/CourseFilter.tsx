@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import type { Course } from "@/types";
 import { CourseGrid } from "@/components/courses/CourseGrid";
@@ -35,12 +36,19 @@ export function CourseFilter({ courses }: { courses: Course[] }) {
               aria-selected={isActive}
               onClick={() => setActive(filter.key)}
               className={cn(
-                "focus-ring rounded-full border px-5 py-2 text-sm font-medium transition-colors",
+                "focus-ring relative rounded-full border px-5 py-2 text-sm font-medium transition-colors",
                 isActive
-                  ? "border-orange bg-orange text-white"
+                  ? "border-orange text-white"
                   : "border-border bg-white text-navy hover:border-orange hover:text-orange"
               )}
             >
+              {isActive && (
+                <motion.span
+                  layoutId="course-filter-active"
+                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                  className="absolute inset-0 -z-10 rounded-full bg-orange"
+                />
+              )}
               {filter.label}
             </button>
           );

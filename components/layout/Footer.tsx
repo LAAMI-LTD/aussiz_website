@@ -5,11 +5,13 @@ import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/data/site";
+import { socialIconPaths } from "@/components/icons/social-icons";
 
 const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/courses", label: "Courses" },
+  { href: "/news", label: "News" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -23,10 +25,10 @@ const courseLinks = [
 ];
 
 const socialLinks = [
-  { key: "facebook", label: "Facebook", url: siteConfig.social.facebook, path: "M13 22v-8h2.7l.4-3H13V9c0-.9.2-1.5 1.5-1.5H16V5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.5v3H9.8v8H13z" },
-  { key: "instagram", label: "Instagram", url: siteConfig.social.instagram, path: "M12 2c2.7 0 3.1 0 4.1.1 1.1 0 1.8.2 2.2.4.5.2.9.5 1.4.9.4.4.7.9.9 1.4.2.4.4 1.1.4 2.2.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c0 1.1-.2 1.8-.4 2.2-.2.5-.5.9-.9 1.4-.4.4-.9.7-1.4.9-.4.2-1.1.4-2.2.4-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1 0-1.8-.2-2.2-.4-.5-.2-.9-.5-1.4-.9-.4-.4-.7-.9-.9-1.4-.2-.4-.4-1.1-.4-2.2-.1-1-.1-1.4-.1-4.1s0-3.1.1-4.1c0-1.1.2-1.8.4-2.2.2-.5.5-.9.9-1.4.4-.4.9-.7 1.4-.9.4-.2 1.1-.4 2.2-.4C8.9 2 9.3 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm5.2-8.4a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z" },
-  { key: "linkedin", label: "LinkedIn", url: siteConfig.social.linkedin, path: "M6.9 8.4H3.6V20h3.3V8.4zM5.3 3.5a1.9 1.9 0 100 3.9 1.9 1.9 0 000-3.9zM20.4 20h-3.3v-6.1c0-1.5-.5-2.5-1.8-2.5-1 0-1.5.7-1.8 1.3-.1.2-.1.6-.1.9V20h-3.3s.1-10.6 0-11.6h3.3v1.6c.4-.7 1.2-1.7 3-1.7 2.2 0 3.9 1.4 3.9 4.5V20z" },
-  { key: "tiktok", label: "TikTok", url: siteConfig.social.tiktok, path: "M16.6 5.82c-.9-.99-1.4-2.28-1.4-3.61h-3.2v13.44c0 1.62-1.32 2.94-2.94 2.94a2.94 2.94 0 01-2.94-2.94 2.94 2.94 0 012.94-2.94c.28 0 .55.04.8.11V9.6a6.15 6.15 0 00-.8-.05A6.16 6.16 0 003 15.7a6.16 6.16 0 006.16 6.16 6.16 6.16 0 006.16-6.16V9.01a9.05 9.05 0 005.29 1.7V7.5a5.6 5.6 0 01-4.01-1.68z" },
+  { key: "facebook", label: "Facebook", url: siteConfig.social.facebook, path: socialIconPaths.facebook },
+  { key: "instagram", label: "Instagram", url: siteConfig.social.instagram, path: socialIconPaths.instagram },
+  { key: "linkedin", label: "LinkedIn", url: siteConfig.social.linkedin, path: socialIconPaths.linkedin },
+  { key: "tiktok", label: "TikTok", url: siteConfig.social.tiktok, path: socialIconPaths.tiktok },
 ];
 
 const columnReveal: Variants = {
@@ -53,8 +55,21 @@ export function Footer() {
         };
 
   return (
-    <footer className="bg-navy text-white">
-      <div className="container-app grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <footer className="relative overflow-hidden bg-navy text-white">
+      {/* Layered background: subtle education imagery beneath a strong navy
+          overlay so the footer stays part of the same visual system rather
+          than competing with the content on top of it. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center opacity-[0.18]"
+        style={{ backgroundImage: "url(/images/hero/computer-lab.jpg)" }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(30,34,72,0.92)_0%,rgba(30,34,72,0.97)_45%,#1E2248_100%)]"
+      />
+
+      <div className="relative container-app grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <motion.div {...reveal(0)}>
           <Link href="/" className="mb-4 inline-flex items-center gap-2.5">
             <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-white p-1.5">
@@ -160,10 +175,38 @@ export function Footer() {
         </motion.div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="container-app flex flex-col items-center justify-between gap-2 py-5 text-xs text-white/55 sm:flex-row">
+      <div className="relative border-t border-white/10">
+        <div className="container-app flex flex-col items-center justify-between gap-3 py-5 text-xs text-white/55 sm:flex-row">
           <p>© 2026 Aussiz Education &amp; Training. All Rights Reserved.</p>
           <p>{siteConfig.partnership.trustBadge} · {siteConfig.partnership.statement}</p>
+          {siteConfig.developer.url ? (
+            <a
+              href={siteConfig.developer.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-ring flex items-center gap-1.5 rounded-md text-white/45 transition-colors hover:text-white/80"
+            >
+              <Image
+                src="/logos/laami-logo.jpeg"
+                alt=""
+                width={16}
+                height={14}
+                className="h-3.5 w-auto rounded-sm opacity-80"
+              />
+              Developed by {siteConfig.developer.name}
+            </a>
+          ) : (
+            <span className="flex items-center gap-1.5 text-white/45">
+              <Image
+                src="/logos/laami-logo.jpeg"
+                alt=""
+                width={16}
+                height={14}
+                className="h-3.5 w-auto rounded-sm opacity-80"
+              />
+              Developed by {siteConfig.developer.name}
+            </span>
+          )}
         </div>
       </div>
     </footer>

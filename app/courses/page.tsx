@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { courses } from "@/data/courses";
 import { CourseFilter } from "@/components/courses/CourseFilter";
 import { CTASection } from "@/components/home/CTASection";
+import { Reveal } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
   title: "Courses & Training",
@@ -14,13 +15,15 @@ export default function CoursesPage() {
     <>
       <section className="bg-white py-16 md:py-20">
         <div className="container-app text-center">
-          <h1 className="font-heading text-4xl font-bold text-navy sm:text-5xl">
-            Courses &amp; Training
-          </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-            Explore learning opportunities designed to help you build practical skills,
-            prepare for examinations and move toward your next goal.
-          </p>
+          <Reveal>
+            <h1 className="font-heading text-4xl font-bold text-navy sm:text-5xl">
+              Courses &amp; Training
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              Explore learning opportunities designed to help you build practical skills,
+              prepare for examinations and move toward your next goal.
+            </p>
+          </Reveal>
         </div>
       </section>
 
