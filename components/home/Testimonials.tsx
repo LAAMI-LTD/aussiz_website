@@ -81,11 +81,6 @@ export function Testimonials() {
                     <p className="text-xs text-muted">{active.course}</p>
                   </div>
                 </div>
-                {active.isPlaceholder && (
-                  <p className="mt-3 text-[11px] italic text-muted/80">
-                    Sample testimonial — replace with verified student feedback.
-                  </p>
-                )}
               </motion.div>
             </AnimatePresence>
           </div>

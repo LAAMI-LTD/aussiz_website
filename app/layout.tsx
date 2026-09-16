@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   },
   description:
     "Aussiz Education and Training provides IELTS and PTE preparation, exam booking support, computer and ICT training, German language training, Nurse Aide, Caregiving and Disability courses.",
+  icons: {
+    icon: "/logo/aussiz-logo.png",
+    shortcut: "/logo/aussiz-logo.png",
+    apple: "/logo/aussiz-logo.png",
+  },
 };
 
 export const viewport: Viewport = {
@@ -35,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${poppins.variable} antialiased`}>
         <Navbar />
         <main>{children}</main>

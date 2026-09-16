@@ -26,7 +26,7 @@ export function Hero() {
           initial={prefersReducedMotion ? false : { scale: 1.06 }}
           animate={{ scale: 1 }}
           transition={{ duration: 8, ease: "easeOut" }}
-          className="h-full w-full"
+          className="relative h-full w-full"
         >
           <Image
             src="/images/hero/computer-lab.jpg"

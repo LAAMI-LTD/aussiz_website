@@ -191,7 +191,8 @@ export function Footer() {
                 alt=""
                 width={16}
                 height={14}
-                className="h-3.5 w-auto rounded-sm opacity-80"
+                style={{ width: 16, height: 14 }}
+                className="rounded-sm opacity-80"
               />
               Developed by {siteConfig.developer.name}
             </a>
@@ -202,7 +203,8 @@ export function Footer() {
                 alt=""
                 width={16}
                 height={14}
-                className="h-3.5 w-auto rounded-sm opacity-80"
+                style={{ width: 16, height: 14 }}
+                className="rounded-sm opacity-80"
               />
               Developed by {siteConfig.developer.name}
             </span>
